@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Features\Categories\Commands\" />
+    <Folder Include="Features\Organizations\Commands\" />
     <Folder Include="Features\Trips\Commands\" />
   </ItemGroup>
 
