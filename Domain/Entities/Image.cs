@@ -4,7 +4,6 @@ namespace Domain.Entities
 {
     public class Image : AuditableEntity
     {
-        public Guid ImageId { get; set; }
         public string Path { get; set; } = string.Empty;
         public bool IsUploaded { get; set; }
         public Guid TripId { get; set; }

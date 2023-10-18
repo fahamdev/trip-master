@@ -1,9 +1,9 @@
 ﻿using Application.Contracts.Persistence;
-using Application.Features.Trips.DTOs;
+using Application.Features.Trips.Queries.GetTripList.DTOs;
 using AutoMapper;
 using MediatR;
 
-namespace Application.Features.Trips.Queries
+namespace Application.Features.Trips.Queries.TripList
 {
     public class GetTripsListQueryhandler : IRequestHandler<GetTripsListQuery, List<TripsListResponse>>
     {
