@@ -5,6 +5,6 @@ namespace Application.Features.Categories.Queries.GetCategoriesListWithTrips
 {
     public class GetCategoryListWithTripsQuery : IRequest<List<CategoryTripListResponse>>
     {
-        public bool includePassedTrips { get; set; }
+        public bool IncludePassedTrips { get; set; }
     }
 }

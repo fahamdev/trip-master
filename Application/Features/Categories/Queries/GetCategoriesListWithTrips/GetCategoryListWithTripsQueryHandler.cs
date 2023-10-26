@@ -18,7 +18,7 @@ namespace Application.Features.Categories.Queries.GetCategoriesListWithTrips
 
         public async Task<List<CategoryTripListResponse>> Handle(GetCategoryListWithTripsQuery request, CancellationToken cancellationToken)
         {
-            var categories = await _categoryRepository.GetCategoriesWithTrips(request.includePassedTrips);
+            var categories = await _categoryRepository.GetCategoriesWithTrips(request.IncludePassedTrips);
             return _mapper.Map<List<CategoryTripListResponse>>(categories);
         }
     }
