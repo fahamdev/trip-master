@@ -1,5 +1,6 @@
 ﻿using Application.Contracts.Persistence;
 using Application.Features.Categories.Commands.UpdateCategory.Validators;
+using Domain.Entities;
 using MediatR;
 
 namespace Application.Features.Categories.Commands.UpdateCategory
@@ -22,6 +23,9 @@ namespace Application.Features.Categories.Commands.UpdateCategory
                 throw new Exceptions.ValidationException(validationResult);
 
             var categoryToUpdate = await _categoryRepository.GetByIdAsync(request.Id);
+            if (categoryToUpdate == null)
+                throw new Exceptions.NotFoundException(typeof(Category).Name, request.Id);
+
             categoryToUpdate.Name = request.Name;
 
             await _categoryRepository.UpdateAsync(categoryToUpdate);
