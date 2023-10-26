@@ -18,7 +18,7 @@ namespace Application.Features.Trips.Queries.TripDetail
 
         public async Task<TripDetailResponse> Handle(GetTripDetailQuery request, CancellationToken cancellationToken)
         {
-            var trip = await _tripRepository.GetTripWithDetails(request.Id);
+            var trip = await _tripRepository.GetByIdAsync(request.Id);
             return _mapper.Map<TripDetailResponse>(trip);
         }
     }
